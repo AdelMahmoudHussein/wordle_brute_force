@@ -1,4 +1,5 @@
 import random
+from warnings import catch_warnings
 
 
 with open("word5.txt") as f:
@@ -33,7 +34,15 @@ def guess(wordlist=data,chars=[],not_chars=[],wrong_words=[],first="",second="",
                 (word[2] == wrong[2]) or
                 (word[3] == wrong[3]) or
                 (word[4] == wrong[4])):
-                    final_subwordlist.remove(word)
+                    # print("Removing .... {}".format(word))
+                    try:
+                        final_subwordlist.remove(word)
+                    except ValueError as err:
+                        # print("Could not remove word({}) as it removed before.".format(word))
+                        # print(err)
+                        pass
+                    # finally:
+                    #     pass
     final_subwordlist = set(final_subwordlist)  
     for word in final_subwordlist:
         print(word) 
