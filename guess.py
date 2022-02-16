@@ -56,8 +56,8 @@ chars,not_chars,first,second,third,fourth,fifth = "","","","","","",""
 wrong_words = []
 print("Three Random Words to start with : " + rand1,rand2,rand3)
 for i in range(6):
-    chars += input("Enter Letters: ").lower()
-    not_chars += input("Enter not Letters: ").lower()
+    chars += input("Enter new found Letters: ").lower()
+    not_chars += input("Enter new not found Letters: ").lower()
     wrong_words.append(input("Enter new wrong word (must be 5): ").lower())
     first = input("Enter First Letter: ").lower()
     second = input("Enter second Letter: ").lower()
